@@ -12,10 +12,8 @@ Dev.create(name: "Gazorpazop")
 
 puts "Creating freebies..."
 
-# ***************************************************************
-# * TODO: create freebies! Remember, a freebie belongs to a dev *
-# * and a freebie belongs to a company.                         *
-# ***************************************************************
-# Create freebies Here
+15.times do
+  Freebie.create(item_name: Faker::Food.fruits, value: rand(5..20), company_id: Company.all.sample.id, dev_id: Dev.all.sample.id)
+end
 
 puts "Seeding done!"
