@@ -12,8 +12,7 @@ class Dev < ActiveRecord::Base
   
   def give_away new_dev, freebie
     if freebie.dev_id == self.id
-      freebie.dev_id = new_dev.id
-      freebie.save
+      freebie.update(dev_id: "#{new_dev.id}")
     else
       p "can't give what's not yours"
     end
